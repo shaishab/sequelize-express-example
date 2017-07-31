@@ -1,0 +1,19 @@
+$ git status
+$ cat .gitignore
+# untracked files #
+/node_modules/*
+*.DS_Store
+# Custom log files we are keeping
+/logs/**
+*.log
+# Postman files
+#*.postman*
+# Istanbul coverage files
+/coverage**
+# Public files
+/public/**
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
