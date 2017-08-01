@@ -1,4 +1,4 @@
-var User  = require('../models').Users,
+var User  = require('../models').User,
   Promise = require('bluebird'),
   errorResolver = require('../helpers/errorResolver');
 

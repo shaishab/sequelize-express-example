@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('Users', {
+	var Article = sequelize.define('Article', {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
@@ -33,8 +33,17 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'Users',
+		tableName: 'Articles',
 		timestamps: false,
 		schema: 'public'
 	});
+
+	Article.associate = function(models) {
+		Article.belongsTo(models.User, {
+			foreignKey: {
+				allowNull: false
+			}
+		});
+	};
+	return Article;
 };
