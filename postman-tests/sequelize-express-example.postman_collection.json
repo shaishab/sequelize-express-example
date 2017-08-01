@@ -1,0 +1,130 @@
+{
+	"variables": [],
+	"info": {
+		"name": "sequelize-express-example",
+		"_postman_id": "fe4c8f0d-3325-e0fe-882c-9468a0cc5e04",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 - User",
+			"description": "",
+			"item": [
+				{
+					"name": "createUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"tests[\"Status code is 200\"] = data.success === true;",
+									"postman.setEnvironmentVariable(\"user.id\", data.user.id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"shaishab\",\n    \"email\": \"shaishab.cse@gmail.com\",\n    \"name\": \"Shaishab Roy\",\n    \"password\": \"123\",\n    \"createdAt\": \"2017-07-26T06:55:23.776Z\",\n    \"updatedAt\": \"2017-07-26T06:55:23.776Z\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "getUserList",
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/users/{{user.id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserById",
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/users/{{user.id}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserById",
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/users/{{user.id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "sequelize-express-example",
+  "version": "1.0.0",
+  "description": "sequelize-express-example project using node.js, express, sequelize and postgress-sql db",
+  "main": "gruntfile.js",
+  "scripts": {
+    "start": "grunt"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "sequelize",
+    "postgress",
+    "sequelize-auto"
+  ],
+  "author": "shaishab.cse@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "~1.17.1",
+    "compression": "^1.7.0",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "express": "~4.15.2",
+    "express-validator": "^3.2.1",
+    "express-winston": "^2.4.0",
+    "flat": "^4.0.0",
+    "grund": "^1.0.7",
+    "grunt": "^1.0.1",
+    "jwt-simple": "^0.5.1",
+    "load-grunt-tasks": "^3.5.2",
+    "lodash": "^4.17.4",
+    "morgan": "~1.8.1",
+    "node-monitor": "^0.3.11",
+    "pg": "6.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.3.2",
+    "sequelize-auto": "^0.4.28",
+    "sequelize-cli": "^2.7.0",
+    "serve-favicon": "~2.4.2",
+    "util": "^0.10.3",
+    "winston": "^2.3.1",
+    "winston-loggly": "^1.3.1"
+  },
+  "devDependencies": {
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-env": "^0.4.4",
+    "grunt-node-inspector": "^1.0.0",
+    "grunt-nodemon": "^0.4.2"
+  }
+}
