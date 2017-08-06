@@ -7,6 +7,9 @@ An example for the usage of Sequelize within an [Express.js](http://expressjs.co
     npm install
     npm start
 
+This will start the application and create tables **Users** and **Articles** in **Public** schema of **PostgreSQl** database. Just open http://localhost:3000/api/v1.0/ and you will see welcome message.
+
+
 # Generate models from existing tables
 To generate models from your existing tables go to _**sequelize-model-generator**_ directory and update **model-generator-config.js** file to set your **DB** information and in **tables** field set the table name for that tables you want to generate schema.
 and run the command
