@@ -1,5 +1,5 @@
 # Sequelize Express Example
-An example for the usage of Sequelize within an [Express.js](http://expressjs.com/) application. This repository structure followed MEAN stack structure and usages of model like **mongoose** so if you are familiar with mongoose then you can easily go through the codes. In this project also used [bluebird](http://bluebirdjs.com/docs/getting-started.html) to promisify so you can execute your code synchronously using **yield** keyword.
+An example for the usage of Sequelize within an [Express.js](http://expressjs.com/) application and for database used [PostgreSQL](https://www.postgresql.org/) . This repository structure followed **MEAN** stack project structure and usages of model like **mongoose** so if you are familiar with mongoose then you can easily go through the codes. In this project also used [bluebird](http://bluebirdjs.com/docs/getting-started.html) to promisify so you can execute your code synchronously using **yield** keyword.
 
 
 # Starting App
