@@ -8,29 +8,23 @@ module.exports = function(sequelize, DataTypes) {
 			primaryKey: true,
 			autoIncrement: true
 		},
-		username: {
+		title: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false
 		},
-		email: {
+		description: {
 			type: DataTypes.STRING,
-			allowNull: true
-		},
-		name: {
-			type: DataTypes.STRING,
-			allowNull: true
-		},
-		password: {
-			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false
 		},
 		createdAt: {
-			type: DataTypes.TIME,
-			allowNull: false
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: DataTypes.NOW
 		},
 		updatedAt: {
-			type: DataTypes.TIME,
-			allowNull: false
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: DataTypes.NOW
 		}
 	}, {
 		tableName: 'Articles',
