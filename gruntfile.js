@@ -76,52 +76,7 @@ module.exports = function(grunt) {
 				reporter: 'spec',
 				require: 'server.js'
 			}
-		},
-		karma: {
-			unit: {
-				configFile: 'karma.conf.js'
-			}
-		},
-		mocha_istanbul: {
-      coverage: {
-            src: watchFiles.mochaTests, // a folder works nicely
-            options: {
-                mask: '*.js'
-            }
-        },
-      coverageSpecial: {
-            src: watchFiles.mochaTests, // specifying file patterns works as well
-            options: {
-                coverageFolder: 'coverageSpecial',
-                mask: '*.js',
-                mochaOptions: ['--harmony','--async-only'], // any extra options
-                istanbulOptions: ['--harmony','--handle-sigint']
-            }
-        },
-      coveralls: {
-            src: watchFiles.mochaTests, // multiple folders also works
-            options: {
-                coverage:true, // this will make the grunt.event.on('coverage') event listener to be triggered
-                check: {
-                    lines: 75,
-                    statements: 75
-                },
-                root: '../sequelize-express-example', // define where the cover task should consider the root of libraries that are covered by tests
-                reportFormats: ['cobertura','lcovonly']
-            }
-        }
-    },
-    istanbul_check_coverage: {
-      default: {
-        options: {
-          coverageFolder: 'coverage*', // will check both coverage folders and merge the coverage results
-          check: {
-            lines: 80,
-            statements: 80
-          }
-        }
-      }
-    }
+		}
 	});
 
 	// Load NPM tasks
@@ -144,16 +99,12 @@ module.exports = function(grunt) {
 	grunt.registerTask('debug', ['env:development', 'concurrent:debug']);
 
 	// Secure task(s).
-	grunt.registerTask('secure', ['env:secure', 'concurrent:default']);
+	//grunt.registerTask('secure', ['env:secure', 'concurrent:default']);
 
 	// Build task(s).
-	grunt.registerTask('build', ['loadConfig']);
+	//grunt.registerTask('build', ['loadConfig']);
 
 	// Test task.
-	grunt.registerTask('test', ['env:test', 'mochaTest']);
-
-	grunt.registerTask('coveralls', ['env:test', 'mocha_istanbul:coveralls']);
-  
-  grunt.registerTask('coverage', ['env:test', 'mocha_istanbul:coverage']);
+	//grunt.registerTask('test', ['env:test', 'mochaTest']);
 
 };
