@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('Users', {
+	var User = sequelize.define('User', {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
@@ -25,16 +25,23 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		},
 		createdAt: {
-			type: DataTypes.TIME,
-			allowNull: false
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: DataTypes.NOW
 		},
 		updatedAt: {
-			type: DataTypes.TIME,
-			allowNull: false
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: DataTypes.NOW
 		}
 	}, {
 		tableName: 'Users',
 		timestamps: false,
 		schema: 'public'
 	});
+
+	User.associate = function(models) {
+		User.hasMany(models.Article);
+	};
+	return User;
 };
