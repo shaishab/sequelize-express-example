@@ -38,7 +38,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"shaishab\",\n    \"email\": \"shaishab.cse@gmail.com\",\n    \"name\": \"Shaishab Roy\",\n    \"password\": \"123\",\n    \"createdAt\": \"2017-07-26T06:55:23.776Z\",\n    \"updatedAt\": \"2017-07-26T06:55:23.776Z\"\n}"
+							"raw": "{\n    \"username\": \"shaishab\",\n    \"email\": \"shaishab.cse@gmail.com\",\n    \"name\": \"Shaishab Roy\",\n    \"password\": \"123\"\n}"
 						},
 						"description": ""
 					},
@@ -108,6 +108,125 @@
 					"name": "deleteUserById",
 					"request": {
 						"url": "http://localhost:3000/api/v1.0/users/{{user.id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "01 - Article",
+			"description": "",
+			"item": [
+				{
+					"name": "createArticle",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"tests[\"Status code is 200\"] = data.success === true;",
+									"postman.setEnvironmentVariable(\"article.id\", data.article.id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/{{user.id}}/articles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"This is the test article title\",\n    \"description\": \"Test title description here\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "getArticleList",
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/articles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "getArticleByIdWithUserInfo",
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/articles/{{article.id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "updateArticleById",
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/articles/{{article.id}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Updated test title description here\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "deleteArticleById",
+					"request": {
+						"url": "http://localhost:3000/api/v1.0/articles/{{article.id}}",
 						"method": "DELETE",
 						"header": [
 							{
