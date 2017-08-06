@@ -13,7 +13,7 @@ Promise.coroutine(function*(){
   // Init the express application
   var app = require('./config/express')();
 
-  db.sequelize.authenticate()
+  db.sequelize.sync()
     .then(() => {
       console.log('Connection has been established successfully.');
       app.listen(config.port);
